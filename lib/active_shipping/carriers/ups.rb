@@ -303,6 +303,30 @@ module ActiveShipping
             end
 
             # not implemented:  * Shipment/ShipmentServiceOptions element
+            #                   * Shipment/ShipmentServiceOptions/SaturdayPickupIndicator element
+            #                   * Shipment/ShipmentServiceOptions/AccessPointCOD element
+            #                   * Shipment/ShipmentServiceOptions/DeliverToAddresseeOnlyIndicator element
+            #                   * Shipment/ShipmentServiceOptions/DirectDeliveryOnlyIndicator element
+            #                   * Shipment/ShipmentServiceOptions/COD element
+            #                   * Shipment/ShipmentServiceOptions/DeliveryConfirmation element
+            #                   * Shipment/ShipmentServiceOptions/ReturnOfDocumentIndicator element
+            #                   * Shipment/ShipmentServiceOptions/UPScarbonneutralIndicator element
+            #                   * Shipment/ShipmentServiceOptions/CertificateOfOriginIndicator element
+            #                   * Shipment/ShipmentServiceOptions/PickupOptions element
+            #                   * Shipment/ShipmentServiceOptions/DeliveryOptions element
+            #                   * Shipment/ShipmentServiceOptions/RestrictedArticles element
+            #                   * Shipment/ShipmentServiceOptions/CommercialInvoiceRemovalIndicator element
+            #                   * Shipment/ShipmentServiceOptions/ImportControl element
+            #                   * Shipment/ShipmentServiceOptions/ReturnService element
+            #                   * Shipment/ShipmentServiceOptions/SDLShipmentIndicator element
+            #                   * Shipment/ShipmentServiceOptions/EPRAIndicator element
+
+            if options[:saturday_delivery]
+              xml.ShipmentServiceOptions do
+                xml.SaturdayDeliveryIndicator
+              end
+            end
+
             if options[:negotiated_rates]
               xml.RateInformation do
                 xml.NegotiatedRatesIndicator
